@@ -135,7 +135,7 @@ def train_random_forest_with_visualizations(clean_data, classroom_data):
     for room in merged_data['Room'].unique():
         print(f"Training model for Room: {room}")
         room_data = merged_data[merged_data['Room'] == room]
-        X = room_data[['hour', 'day', 'month', 'Room Volume']]
+        X = room_data[['Room Volume']]
         y = room_data['result']
         X = X.dropna()
         y = y[X.index]
@@ -196,7 +196,7 @@ def train_random_forest_with_visualizations_and_feature_importance(clean_data, c
     for room in merged_data['Room'].unique():
         print(f"Training model for Room: {room}")
         room_data = merged_data[merged_data['Room'] == room]
-        X = room_data[['hour', 'day', 'month', 'Room Volume']]
+        X = room_data[['hour', 'day', 'month', 'Room Volume', 'name']]
         y = room_data['result']
         X = X.dropna()
         y = y[X.index]
@@ -224,6 +224,7 @@ def train_random_forest_with_visualizations_and_feature_importance(clean_data, c
         plot_feature_importance(model, X.columns, room)
 
     return room_models
+
 
 # Main execution
 if __name__ == "__main__":
