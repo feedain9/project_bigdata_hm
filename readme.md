@@ -17,8 +17,6 @@ This project analyzes temperature sensor data from different rooms in a building
 
 - `analysis.py`: Performs statistical analysis on the temperature data and clustering results to extract meaningful insights.
 
-- `main.py`: The main script that orchestrates the entire analysis pipeline by calling functions from other modules.
-
 ### Key Features
 
 - Data preprocessing and cleaning
